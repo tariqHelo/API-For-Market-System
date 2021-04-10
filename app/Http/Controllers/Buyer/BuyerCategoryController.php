@@ -18,7 +18,8 @@ class BuyerCategoryController extends ApiController
      */
     public function index()
     {
-         $sellers = $buyer->transactions()->with('product.categories')
+         $sellers = $buyer->transactions()
+         ->with('product.categories')
          ->get()
          ->pluck('product.categories')
          ->collapse()
