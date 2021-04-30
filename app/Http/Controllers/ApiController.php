@@ -9,6 +9,9 @@ use Illuminate\Auth\Access\AuthorizationException;
 
 class ApiController extends Controller
 {
+
+
+    
     use ApiResponser;
 
     public function __construct()
@@ -16,6 +19,7 @@ class ApiController extends Controller
     	$this->middleware('auth:api');
     }
 
+    
     protected function allowedAdminAction()
     {
     	if (Gate::denies('admin-action')) {

@@ -17,7 +17,9 @@ class Product extends Model
 	const UNAVAILABLE_PRODUCT = 'unavailable';
 
     public $transformer = ProductTransformer::class;
+
     protected $dates = ['deleted_at'];
+    
     protected $fillable = [
     	'name',
     	'description',
@@ -26,6 +28,7 @@ class Product extends Model
     	'image',
     	'seller_id',
     ];
+    
     protected $hidden = [
         'pivot'
     ];
